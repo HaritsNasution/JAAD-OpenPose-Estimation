@@ -82,7 +82,7 @@ def get_network(type, placeholder_input, sess_for_load=None, trainable=True):
         pretrain_path = 'pretrained/mobilenet_v2_0.5_224/mobilenet_v2_0.5_224.ckpt'
         last_layer = 'MConv_Stage6_L{aux}_5'
     '''
-    elif type in ['cmu', 'openpose']:
+    if type in ['cmu', 'openpose']:
         net = CmuNetwork({'image': placeholder_input}, trainable=trainable)
         pretrain_path = 'numpy/openpose_coco.npy'
         last_layer = 'Mconv7_stage6_L{aux}'
@@ -96,7 +96,7 @@ def get_network(type, placeholder_input, sess_for_load=None, trainable=True):
         last_layer = 'Mconv7_stage6_L{aux}'
     elif type == 'egen':
         net = CmuNetwork({'image':placeholder_input}, trainable=trainable)
-        pretrain_path = 'BLANK'
+        pretrain_path = 'ToBeHonestIDKWhereThisGuyPutIt'
         last_layer = 'Mconv7_stage6_L{aux}'
 
     else:
