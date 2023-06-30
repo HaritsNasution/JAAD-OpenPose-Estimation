@@ -50,9 +50,9 @@ setuptools.setup(
     'Deep Pose Estimation implemented using Tensorflow with Custom Architectures for fast inference.',
     install_requires=REQUIRED_PACKAGES,
     dependency_links=DEPENDENCY_LINKS,
-    url='https://github.com/ildoonet/tf-pose-estimation/',
-    author='Ildoo Kim',
-    author_email='ildoo@ildoo.net',
+    url='https://github.com/gsethi2409/tf-pose-estimation',
+    author='Gunjan Sethi',
+    author_email='gunjans@andrew.cmu.edu',
     license='Apache License 2.0',
     package_dir={'tf_pose_data': 'models'},
     packages=['tf_pose_data'] +
