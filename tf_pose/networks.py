@@ -136,6 +136,7 @@ def get_graph_path(model_name):
         'mobilenet_v2_large_r0.5': 'graph/mobilenet_v2_large/graph_r0.5_opt.pb',
         'mobilenet_v2_large_quantize': 'graph/mobilenet_v2_large/graph_opt_q.pb',
         'mobilenet_v2_small': 'graph/mobilenet_v2_small/graph_opt.pb',
+        'jaad' : 'graph/jaad/graph_opt.pb'
     }
 
     base_data_dir = dirname(dirname(abspath(__file__)))
