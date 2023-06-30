@@ -3,11 +3,11 @@ from os.path import dirname, abspath
 
 import tensorflow as tf
 
-from tf_pose.network_mobilenet import MobilenetNetwork
-from tf_pose.network_mobilenet_thin import MobilenetNetworkThin
+# from tf_pose.network_mobilenet import MobilenetNetwork
+# from tf_pose.network_mobilenet_thin import MobilenetNetworkThin
 
 from tf_pose.network_cmu import CmuNetwork
-from tf_pose.network_mobilenet_v2 import Mobilenetv2Network
+# from tf_pose.network_mobilenet_v2 import Mobilenetv2Network
 
 
 def _get_base_path():
@@ -17,6 +17,7 @@ def _get_base_path():
 
 
 def get_network(type, placeholder_input, sess_for_load=None, trainable=True):
+    '''
     if type == 'mobilenet':
         net = MobilenetNetwork({'image': placeholder_input}, conv_width=0.75, conv_width2=1.00, trainable=trainable)
         pretrain_path = 'pretrained/mobilenet_v1_0.75_224_2017_06_14/mobilenet_v1_0.75_224.ckpt'
@@ -80,7 +81,7 @@ def get_network(type, placeholder_input, sess_for_load=None, trainable=True):
         net = Mobilenetv2Network({'image': placeholder_input}, conv_width=0.5, trainable=trainable)
         pretrain_path = 'pretrained/mobilenet_v2_0.5_224/mobilenet_v2_0.5_224.ckpt'
         last_layer = 'MConv_Stage6_L{aux}_5'
-
+    '''
     elif type in ['cmu', 'openpose']:
         net = CmuNetwork({'image': placeholder_input}, trainable=trainable)
         pretrain_path = 'numpy/openpose_coco.npy'
@@ -92,6 +93,10 @@ def get_network(type, placeholder_input, sess_for_load=None, trainable=True):
     elif type == 'vgg':
         net = CmuNetwork({'image': placeholder_input}, trainable=trainable)
         pretrain_path = 'numpy/openpose_vgg16.npy'
+        last_layer = 'Mconv7_stage6_L{aux}'
+    elif type == 'egen':
+        net = CmuNetwork({'image':placeholder_input}, trainable=trainable)
+        pretrain_path = 'BLANK'
         last_layer = 'Mconv7_stage6_L{aux}'
 
     else:
