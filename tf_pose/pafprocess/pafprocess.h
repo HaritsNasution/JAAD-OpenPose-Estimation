@@ -10,7 +10,7 @@ const int THRESH_PART_CNT = 4;
 const float THRESH_HUMAN_SCORE = 0.3;
 const int NUM_PART = 18;
 
-const int STEP_PAF = 1000;
+const int STEP_PAF = 10;
 
 const int COCOPAIRS_SIZE = 19;
 const int COCOPAIRS_NET[COCOPAIRS_SIZE][2] = {
